@@ -70,6 +70,24 @@ const useStyles = makeStyles(theme => ({
 export default function SearchAppBar(props) {
   const classes = useStyles();
 
+  const authLinks = () => {
+    if (props.userAuth) {
+      return(
+        <React.Fragment>
+         <Link className={classes.link} component={RouterLink} to="/wishlist">Ma liste</Link>
+         <button className={classes.link} onClick={e => props.onLogout()}>Se Déconnecter</button>
+        </React.Fragment>
+      )
+    }
+    return (
+      <React.Fragment>
+        <Link className={classes.link} component={RouterLink} to="/login">Se connecter</Link>
+        <Link className={classes.link} component={RouterLink} to="/register">S'inscrire</Link>
+      </React.Fragment>
+    )
+
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -86,6 +104,7 @@ export default function SearchAppBar(props) {
             <Link className={classes.link} component={RouterLink} to="/">Les mieux notés</Link>
             <Link className={classes.link} component={RouterLink} to="/popular">Populaires</Link>
             <Link className={classes.link} component={RouterLink} to="/now_playing">Au cinéma</Link>
+            {authLinks()}
           </Typography>
           
           <div className={classes.search}>

@@ -4,12 +4,16 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const CardsList = (props) => {
   const data = props.data;
+  
 
   return (
     <MovieGrid>
       {data.results.map((movie) => {
         return (
           <MovieCard 
+            userAuth={props.userAuth} 
+            wishListPage={props.wishListPage}
+            handleRemoveToWishList={props.handleRemoveToWishList}
             key={movie.id} 
             id={movie.id}
             title={movie.title}

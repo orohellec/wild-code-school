@@ -1,22 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import CardsList from '../../components/CardsList/CardsList';
-import Pagination from '../../components/Pagination/Pagination';
-import Loading from '../../components/Loading/Loading';
+import MovieList from '../../../components/MovieList/MovieList';
+import Pagination from '../../../components/Pagination/Pagination';
+import Loading from '../../../components/Loading/Loading';
 
-const MovieSearch = (props) => {
+const MovieSearchPage = (props) => {
   const [moviesData, setMoviesData] = useState(null);
   const [page, setPage] = useState(1);
   const [url, setUrl] = useState(props.url);
   const query = props.query.toLowerCase().replace(/\s/g, "%20");
-  console.log(query);
-
-  // ex: https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MD_API_KEY}&language=fr
- // &query=star%20wars&page=1&include_adult=false
 
   useEffect(
     () => {
       (async () => {
-        console.log('use effect1');
         setUrl(props.url);
         setPage(1);
       })();
@@ -27,7 +22,6 @@ const MovieSearch = (props) => {
   useEffect(
     () => {
       (async () => {
-        console.log('use effect2');
         if (query) {
           try {
             const res = await fetch(`${url}&query=${query}&page=${page}`); //need to solve page problem
@@ -45,7 +39,6 @@ const MovieSearch = (props) => {
 
   // Pagination method
   const handlePageClick = data => { 
-    console.log('(data.selected + 1): ', data.selected + 1);
     setPage(data.selected + 1);
   }
 
@@ -55,7 +48,7 @@ const MovieSearch = (props) => {
     }
     return(
       <React.Fragment>
-        <CardsList data={moviesData} />
+        <MovieList data={moviesData} userAuth={props.userAuth} />
         <Pagination
           page={page} 
           totalPages={moviesData.total_pages}
@@ -70,4 +63,4 @@ const MovieSearch = (props) => {
   )
 }
 
-export default MovieSearch;
+export default MovieSearchPage;

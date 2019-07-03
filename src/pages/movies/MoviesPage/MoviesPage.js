@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import CardsList from '../../components/CardsList/CardsList';
-import Pagination from '../../components/Pagination/Pagination';
-import Loading from '../../components/Loading/Loading';
+import MovieList from '../../../components/MovieList/MovieList';
+import Pagination from '../../../components/Pagination/Pagination';
+import Loading from '../../../components/Loading/Loading';
 
 const MoviesPage = (props) => {
   const [moviesData, setMoviesData] = useState(null);
@@ -11,7 +11,6 @@ const MoviesPage = (props) => {
   useEffect(
     () => {
       (async () => {
-        console.log('use effect1');
         setUrl(props.url);
         setPage(1);
       })();
@@ -22,9 +21,8 @@ const MoviesPage = (props) => {
   useEffect(
     () => {
       (async () => {
-        console.log('use effect2');
         try {
-          const res = await fetch(`${url}&page=${page}`); //need to solve page problem
+          const res = await fetch(`${url}&page=${page}`);
           const resJson = await res.json();
           setMoviesData(resJson);
         }
@@ -38,7 +36,6 @@ const MoviesPage = (props) => {
 
   // Pagination method
   const handlePageClick = data => { 
-    console.log('(data.selected + 1): ', data.selected + 1);
     setPage(data.selected + 1);
   }
 
@@ -48,7 +45,7 @@ const MoviesPage = (props) => {
     }
     return(
       <React.Fragment>
-        <CardsList data={moviesData} />
+        <MovieList data={moviesData} userAuth={props.userAuth} />
         <Pagination
           page={page} 
           totalPages={moviesData.total_pages}
