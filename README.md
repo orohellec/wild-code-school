@@ -26,3 +26,6 @@ Il est bien sur aussi possible de retirer des films de sa liste d'envie.
 => (plus d'infos par email)
 
 Comme vous pouvez le constater il reste énormément de choses à améliorer. Je vais continuer de travailler sur cette application pour m'entrainer (en plus cela fera quelquechose à ajouter à mon portfolio :) ). En attendant je vous montre ce que j'ai déjà fait dans le but de fixer un rendez vous au plus vite car le timing est serré pour trouver une alternance.
+
+### Lien CodeWars
+https://www.codewars.com/users/olivier.r/completed (désolé je n'ai pas fait de footer)
