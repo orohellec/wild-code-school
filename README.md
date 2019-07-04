@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Wild Code School Project (Candidature alternance)
 
-## Available Scripts
+### Technologies utilisées
+- React
+- Mongodb/Mongoose
+- Node.js/express => https://github.com/orohellec/wild-code-school-back
 
-In the project directory, you can run:
+### Concept de l'application
+Ceci est une petite application permettant de rechercher des films par catégories et par saisi de l'utilisateur.
+L'application utilise la base de donnée de l'api movie databse pour aller rechercher les films.
+Il est aussi possible de créer un compte et d'ajouter des films à sa liste d'envie. Dans ce cas les utilisateurs et les films
+dans leur liste d'envie seront stockés dans ma propre base de donnée (mongodb - voir repo wild-code-school-back)
+Il est bien sur aussi possible de retirer des films de sa liste d'envie.
 
-### `npm start`
+### Principales tâches à effectuer avant d'intégrer d'autres fonctionnalités
+- L'application ne contient pour le moment aucun test
+- L'application n'est pas encore sécurisé contre les attaques CSRF.
+- La gestion des erreurs aussi bien côté front que back n'est pas optimisé. (beaucoup de console.log(err) à remplacer)
+- Besoin de refactoriser l'application et d'intégrer Redux. (ce que je suis en train d'apprendre)
+- L'application n'est pas en production pour le moment
+- Le css est un peu baclé pour le moment
+- Les entrées utilisateurs ne sont pas vérifiés pour le moment (je compte utiliser express-validator pour palier à ce problème)
+- Petite erreur à patcher. Il est pour le moment possible d'ajouter deux fois le même film à sa liste d'envie.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### !! Vous ne pouvez pas faire marcher l'application car il manque les variables d'environnement (clés api...) !!
+=> (plus d'infos par email)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Comme vous pouvez le constater il reste énormément de choses à améliorer. Je vais continuer de travailler sur cette application pour m'entrainer (en plus cela fera quelquechose à ajouter à mon portfolio :) ). En attendant je vous montre ce que j'ai déjà fait dans le but de fixer un rendez vous au plus vite car le timing est serré pour trouver une alternance.
